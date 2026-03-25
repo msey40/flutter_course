@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course/layout_responsive_screen.dart';
-// import 'package:flutter_course/responsive_screen.dart';
+import 'package:flutter_course/conponent_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,33 +10,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flutter Course',
-
-      home: MyHomePage(title: 'responsive screen'),
-    );
+    return MaterialApp(title: 'Flutter course', home: Homescreen());
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class Homescreen extends StatelessWidget {
+  const Homescreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text('My screen'),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 56, 156, 237),
       ),
-      // body: Responsivescreen(),
-      body: LayoutResponsiveScreen(),
+      body: ConponentFlutter(),
     );
   }
 }
