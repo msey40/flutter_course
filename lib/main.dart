@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course/conponent_flutter.dart';
+// import 'package:flutter_course/conponent_flutter.dart';
+import 'package:flutter_course/second_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,7 @@ class Homescreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 56, 156, 237),
       ),
-      body: ConponentFlutter(),
+      body: SecondScreen(),
     );
   }
 }
