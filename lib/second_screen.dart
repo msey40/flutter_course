@@ -9,27 +9,25 @@ class SecondScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text("Welcome to the Second Screen"),
           SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
-              Navigator.pushAndRemoveUntil(
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => ComponentFlutter()),
-                (route) => false,
               );
             },
             child: const Text("Go to Component Flutter"),
           ),
           SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Icon(Icons.arrow_back),
-          ),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     Navigator.pop(context);
+          //   },
+          //   child: const Icon(Icons.arrow_back),
+          // ),
         ],
       ),
     );

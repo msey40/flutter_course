@@ -15,7 +15,17 @@ class _ComponentFlutterState extends State<ComponentFlutter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Component Flutter")),
+      appBar: AppBar(
+        title: const Text("Component Flutter"),
+        actions: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(Icons.arrow_back),
+          ),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
