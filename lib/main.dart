@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'thirdparty.dart'; // <-- import your file here
+import 'package:flutter_course/product_screen.dart';
+// import 'package:flutter_course/product_view.dart';
+// import 'thirdparty.dart'; // <-- import your file here
 
 void main() {
   runApp(const MyApp());
@@ -10,13 +12,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Course',
-      home: Scaffold(
-        body: const Thirdparty(
-          title: 'My Carousel',
-        ), // <-- use your widget here
-      ),
-    );
+    return MaterialApp(title: 'Flutter Course', home: ProductScreen());
   }
 }
