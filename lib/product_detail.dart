@@ -4,8 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_course/product.dart';
 
 class ProductDetail extends StatelessWidget {
-  const ProductDetail({super.key, required this.product});
+  const ProductDetail({
+    super.key,
+    required this.product,
+    required this.onAddToCart,
+  });
   final Product product;
+  final VoidCallback onAddToCart;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,8 +23,8 @@ class ProductDetail extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  width: double.infinity,
-                  height: 650,
+                  width: 500,
+                  height: 430,
                   child: Hero(
                     tag: product.id,
                     child: ClipRRect(
@@ -27,7 +32,11 @@ class ProductDetail extends StatelessWidget {
                         bottomLeft: Radius.circular(30),
                         bottomRight: Radius.circular(30),
                       ),
-                      child: Image.asset(product.imagesurl, fit: BoxFit.cover),
+                      child: Image.asset(
+                        product.imagesurl,
+                        fit: BoxFit.cover,
+                        filterQuality: FilterQuality.high,
+                      ),
                     ),
                   ),
                 ),
@@ -47,7 +56,7 @@ class ProductDetail extends StatelessWidget {
                     '\$${product.price.toStringAsFixed(2)}',
                     style: TextStyle(
                       fontSize: 16,
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Colors.pinkAccent[700],
                     ),
                   ),
                 ),
@@ -68,7 +77,9 @@ class ProductDetail extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  onAddToCart();
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.pink,
                   minimumSize: const Size.fromHeight(50),
