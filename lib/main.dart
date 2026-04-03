@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course/product_screen.dart';
-// import 'package:flutter_course/product_view.dart';
-// import 'thirdparty.dart'; // <-- import your file here
+import 'package:flutter_course/testApi/screen/product_screen.dart';
 
 void main() {
   runApp(const MyApp());
